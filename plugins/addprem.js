@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (now < user.premiumTime) user.premiumTime += jumlahHari
     else user.premiumTime = now + jumlahHari
     user.premium = true
-    m.reply(`✔️ Success\n📛 *Name:* ${user.name}\n📆 *Days:* ${txt} days\n📉 *Countdown:* ${user.premiumTime - now}`)
+    m.reply(`✔️ نجاح\n📛 *الاسم:* ${user.name}\n📆 *عدد أيام العضوية:* ${txt} يوم\n📉 *مؤشر بالثانية:* ${user.premiumTime - now}`)
 }
 handler.help = ['addprem [@user] <amount of days>']
 handler.tags = ['owner']
