@@ -8,9 +8,9 @@ let handler = async function (m, { text, usedPrefix, command }) {
   if (user.registered === true) return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": '*تسجيل*',
-          "description": '📮 Anda sudah terdaftar! mau daftar ulang?',
+          "description": '📮أنت مسجّل بالفعل! أتريد إعادة التسجيل؟',
           "footerText": global.botdate,
-          "buttonText": "Kanna BOT",
+          "buttonText": "بوت ايانوكوجي",
           "listType": "SINGLE_SELECT",
           "sections": [
                             {
@@ -40,7 +40,7 @@ let handler = async function (m, { text, usedPrefix, command }) {
         "listMessage": {
           "title": '*── 「 عليك التسجيل اولا 」 ──*',
           "description": `
-📮 Silahkan Pilih umur anda!`,
+📮 أرجوك إختر عمرك`,
           "footerText": global.botdate,
           "buttonText": "تسجيل",
           "listType": "SINGLE_SELECT",
@@ -104,7 +104,7 @@ let handler = async function (m, { text, usedPrefix, command }) {
                                     	"title": '9 سنوات',
                                          "rowId": '.daftar ' + namae + '.9'
                        }],
-                    "title": "Silahkan Pilih Umur Anda!"
+                    "title": "أرجوك إختر عمرك!"
                   }
                         ], "contextInfo": 
                          { "stanzaId": m.key.id,
