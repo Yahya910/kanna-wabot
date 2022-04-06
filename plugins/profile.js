@@ -12,17 +12,17 @@ let handler = async (m, { conn }) => {
     let username = conn.getName(who)
     let str = `
 
-✧──────────[ *PROFILE* ]──────────✧
-📇 • *Name:* ${username} ${registered ? '(' + name + ') ': ''}
-📧 • *Tag:* @${who.replace(/@.+/, '')}
-📞 • *Number:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-💻 • *Link:* https://wa.me/${who.split`@`[0]}
-${registered ? '🎨 • *Age:* ' + age : ''}
+✧──────────[ *بروفايل* ]──────────✧
+📇 • *الاسم:* ${username} ${registered ? '(' + name + ') ': ''}
+📧 • *الطاغ:* @${who.replace(/@.+/, '')}
+📞 • *الرقم:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+💻 • *الرابط:* https://wa.me/${who.split`@`[0]}
+${registered ? '🎨 • *العمر:* ' + age : ''}
 ${about ? '🗒️ • *About:* ' + about : ''}
 
-🌟 • *Premium:* ${premium ? "✅" :"❌"}
-📑 • *Registered:* ${registered ? '✅': '❌'}
-⛔ • *Banned:* ❌
+🌟 • *عضو مميز:* ${premium ? "✅" :"❌"}
+📑 • *مسجل في القائمة:* ${registered ? '✅': '❌'}
+⛔ • *مبند:* ❌
 
 `.trim()
     let mentionedJid = [who]
