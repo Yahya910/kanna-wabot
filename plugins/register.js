@@ -143,16 +143,16 @@ conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
           "sections": [
                             {
                                 "rows": [{
-                                         "title": `LIST MENU`,
-                                         "description": "List Menu Kanna BOT",
+                                         "title": `قائمة الاوامر`,
+                                         "description": "قائمة اوامر Kanna BOT",
                                          "rowId": ".menu"
                                     }, {
-                                         "title": `CODE REGISTER`,
-                                         "description": "Bonus Pemula", 
+                                         "title": `كود التسجيل`,
+                                         "description": "كود  sn الخاص بي", 
                                          "rowId": `.codereg ${pickRandom(['070698', '661528', '878588', '775636', '098786'])}`
                                     }, {
-                                         "title": `PROFILE`,
-                                         "description": "Profile Anda!",
+                                         "title": `بروفايل`,
+                                         "description": "صفحتي!",
                                          "rowId": '.pp'
                        }],
                     "title": "صنع من طرف ايانوكوجي"
