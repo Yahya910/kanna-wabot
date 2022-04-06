@@ -11,35 +11,35 @@ const chats = conn.chats.all()
 const groups = chats.filter(v => v.jid.endsWith('g.us'))
 const defaultMenu = {
   before: `
-╭─────═[ *INFO PENGGUNA* ]═─────⋆
+╭─────═[ *حالتك* ]═─────⋆
 │╭───────────────···
-┴│▸ *Name:* %name
-⬡│▸ *Premium:* %prems
-⬡│▸ *Age:* %age
-⬡│▸ *Limit:* %limit
-⬡│▸ *Money:* %money
-⬡│▸ *Role:* %role
-⬡│▸ *Level:* %level [%xp4levelup]
-⬡│▸ *Xp:* %exp / %maxexp
-┬│▸ *Total Xp:* %totalexp
+┴│▸ *الاسم:* %name
+⬡│▸ *العضوية:* %prems
+⬡│▸ *العمر:* %age
+⬡│▸ *الحد:* %limit
+⬡│▸ *الاموال:* %money
+⬡│▸ *الدور:* %role
+⬡│▸ *المستوى:* %level [%xp4levelup]
+⬡│▸ *نقاط:* %exp / %maxexp
+┬│▸ *مجموع النقاط:* %totalexp
 │╰────────────────···
-┠─────═[ *TODAY* ]═─────⋆
+┠─────═[ *اليوم* ]═─────⋆
 │╭────────────────···
 ┴│    *${ucapan()} %name!*
-⬡│▸ *Tanggal:* %week %weton, %date
-⬡│▸ *Tanggal Islam:* %dateIslamic
-┬│▸ *Waktu:* %time
+⬡│▸ *التاريخ:* %week %weton, %date
+⬡│▸ *التاريخ الهجري:* %dateIslamic
+┬│▸ *التوقيت:* %time
 │╰────────────────···
-┠─────═[ *BOT INFO* ]═─────⋆
+┠─────═[ *معلومات حول البوت* ]═─────⋆
 │╭────────────────···
-┴│▸ *Nama Bot:* %me
-⬡│▸ *Mode:* ${global.opts['self'] ? 'Private' : 'Publik'}
-⬡│▸ *Prefix:* [ ! ]
-⬡│▸ *Speed:* ${neww - old} ms
-⬡│▸ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-⬡│▸ *Platform:* Unbuntu linux
-⬡│▸ *Uptime:* %uptime (%muptime)
-┬│▸ *Database:* %rtotalreg dari %totalreg
+┴│▸ *اسم البوت:*  kanna wabot من صنع و تطوير ايانوكوجي
+⬡│▸ *الوضع:* ${global.opts['self'] ? 'خاص' : 'عام'}
+⬡│▸ *جهاز البوت:* IPhone 13
+⬡│▸ *سرعة:* ${neww - old} ms
+⬡│▸ *الشارج:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
+⬡│▸ *محرك البحث:* Unbuntu linux
+⬡│▸ *مدة الاشتغال:* %uptime (%muptime)
+┬│▸ *المطور :* yahya
 │╰────────────────···
 ╰──────────═┅═──────────
 %readmore`.trimStart(),
@@ -254,25 +254,18 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `✧────────···[ Dashboard ]···─────────✧`.trim(),
+          "title": `✧────────···[ كونيتشيوا ]···─────────✧`.trim(),
           "description": `${ucapan()}, ${name} !`.trim(),
           "footerText": `╭━━━━━━━━━━━━━━━━┈─✧
-┴
-│⬡ Aktif selama ${uptime}
-│⬡ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
-│⬡ Prefix : [#]
-│⬡ *${Object.keys(global.db.data.users).length}* Pengguna
-│⬡ *${totaljadibot.length}* Jadibot
-│⬡ *${conn.blocklist.length}* Terblock
-│⬡ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
-│⬡ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+
 ┬
 ├━━━━━━━━━━━━━━━━┈─⋆
-│ ▸ *Author :* Nurutomo
-┴ ▸ *Owner :* Letta
+┴  
 ✧
 ┬ 📌 𝗣𝗶𝗻𝗻𝗲𝗱 :
-│ Tolong jangan dispam ya biar ga delay
+│ هناك طريقان للحصول على العضوية :
+▸ الاشتراك في قنوات المطور
+▸ ثانيا الدفع 
 ╰━━━━━━━━━━━━━━━━┈─◂
      ▌│█║▌║▌║║▌║▌║█│▌
      
@@ -282,31 +275,31 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           "sections": [
                             {
                                 "rows": [{
-                                         "title": "[📊] Status",
-                                         "description": "Status Kanna Bot",
+                                         "title": "[📊] الحالة",
+                                         "description": "حالة Kanna Bot",
                                          "rowId": ".botstat"
                                     }, {
-                                         "title": "[⚡] Speed",
-                                         "description": "Menampilkann Kecepatan Respon Bot",
+                                         "title": "[⚡] سرعة",
+                                         "description": "سرعة استجابة البوت",
                                          "rowId": ".ping"
                                     }, {
-                                         "title": "[🗒️] Info",
-                                         "description": "Menampilkan Info Bot",
+                                         "title": "[🗒️] معلومات",
+                                         "description": "حول البوت",
                                          "rowId": ".info"
                                     }, {
-                                         "title": "[🎐] Creator",
-                                         "description": "Kontak Creator ku ^~^",
+                                         "title": "[🎐] المطور",
+                                         "description": "صاحب البوت^~^",
                                          "rowId": ".nowner"
                        }],
-                    "title": "✧───────────────[ Stats ]───────────────✧"
+                    "title": "✧───────────────[ القائمة ]───────────────✧"
                 }, {
                   "rows": [{
                   "title": "Menu 01 |🧾|",
-                  "description": "All Commands",
+                  "description": "الكل",
                   "rowId": ".? all"
                 }, {
                   "title": "Menu 02 |🎮|",
-                  "description": "Game",
+                  "description": "الالعاب",
                   "rowId": ".? game"
                 }, {
                   "title": "Menu 03 |🌱|",
@@ -314,137 +307,114 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": ".? rpg"
                 }, {
                   "title": "Menu 04 |✨|",
-                  "description": "Exp & limit",
+                  "description": "النقاط",
                   "rowId": ".? xp"
                 }, {
                   "title": "Menu 05 |🧩|",
-                  "description": "Fun",
+                  "description": "متعة",
                   "rowId": ".? fun"
                 }, {
                   "title": "Menu 06 |🎁|",
-                  "description": "Gift",
+                  "description": "هدايا",
                   "rowId": ".? gift"
                 }, {
                   "title": "Menu 07 |🔞|",
-                  "description": "Nsfw",
+                  "description": "حرام",
                   "rowId": ".? nsfw"
                 }, {
                   "title": "Menu 08 |⛩️|",
-                  "description": "Anime",
+                  "description": "انمي",
                   "rowId": ".? anime"
                 }, {
                   "title": "Menu 09 |📰|",
-                  "description": "News",
+                  "description": "اخبار",
                   "rowId": ".? News"
                 },  {
                   "title": "Menu 10 |🕋|",
-                  "description": "Islami",
+                  "description": "اسلام",
                   "rowId": ".? quran"
                 }, {
                   "title": "Menu 11 |🏫|",
-                  "description": "Edukasi",
+                  "description": "القديسية",
                   "rowId": ".? edukasi"
                 }, {
                   "title": "Menu 12 |🖼️|",
-                  "description": "Radom Image",
+                  "description": "صور عشوائية",
                   "rowId": ".? image"
                 },  {
                   "title": "Menu 13 |🎫|",
-                  "description": "Sticker",
+                  "description": "ستيكر",
                   "rowId": ".? stiker"
                 }, {
                   "title": "Menu 14 |🐚|",
-                  "description": "Kerang ajaib",
+                  "description": "نسيت",
                   "rowId": ".? kerangajaib"
                 }, {
                   "title": "Menu 15 |📑|",
-                  "description": "Quotes",
+                  "description": "حول",
                   "rowId": ".? quotes"
                 }, {
                   "title": "Menu 16 |👑|",
-                  "description": "Admin Group",
+                  "description": "ادمن",
                   "rowId": ".? admin"
                 }, {
                   "title": "Menu 17 |👥|",
-                  "description": "Group Chat",
+                  "description": "مجموعة",
                   "rowId": ".? grup"
                 }, {
                   "title": "Menu 18 |🌟|",
-                  "description": "Premium Users",
+                  "description": "أعضاء المهمين",
                   "rowId": ".? premium"
                 }, {
                   "title": "Menu 19 |💻|",
-                  "description": "Internet",
+                  "description": "انترنت",
                   "rowId": ".? internet"
                 }, {
                   "title": "Menu 20 |🎭|",
-                  "description": "Anonymous Chat",
+                  "description": "لبدء محادثة هكر",
                   "rowId": ".? anonymous"
                 }, {
                   "title": "Menu 21 |✍️|",
-                  "description": "Menulis & Membuat Logo",
+                  "description": "لوغو",
                   "rowId": ".? nulis"
                 }, {
                   "title": "Menu 22 |📥|",
-                  "description": "Downloader",
+                  "description": "تحميلات",
                   "rowId": ".? downloader"
                 }, {
                   "title": "Menu 23 |🧰|",
-                  "description": "Tools",
+                  "description": "الادوات",
                   "rowId": ".? tools"
                 }, {
                   "title": "Menu 24 |📂|",
-                  "description": "Database",
+                  "description": "داتا",
                   "rowId": ".? database"
                 }, {
                   "title": "Menu 25 |🗳️|",
-                  "description": "Vote & Absen",
+                  "description": "التصويت و الغياب",
                   "rowId": ".? vote"
                 }, {
                   "title": "Menu 26 |🎙️|",
-                  "description": "Voice Changer",
+                  "description": "مغير الصوت",
                   "rowId": ".? audio"
                 }, {
                   "title": "Menu 27 |🤖|",
-                  "description": "Jadibot",
+                  "description": "الحصول على البوت : خاص ",
                   "rowId": ".? jadibot"
                 }, {
                   "title": "Menu 28 |ℹ️|",
-                  "description": "Info",
+                  "description": "معلومات",
                   "rowId": ".? info"
                 }, {
                   "title": "Menu 29 |❓|",
-                  "description": "No Category",
+                  "description": "لا شيء",
                   "rowId": ".? tanpakategori"
                 }, {
                   "title": "Menu 30 | 🧑‍💻|",
-                  "description": "Owner",
+                  "description": "المبرمج",
                   "rowId": ".? owner"
                 }],
-                                "title": "✧───────────────[ Menu ]───────────────✧"
-                                }, {
-                                "rows": [{
-                                "title": "[🗳️] Donasi",
-                                "description": "Donasi kak, jangan enak pakenya doang",
-                                "rowId": ".donasi"
-                                }, {
-                                "title": "[🔖] Sewa",
-                                "description": "Menampilkan List harga sewabot",
-                                "rowId": ".sewa"
-                                }, {
-                                "title": "[🎗️] Premium",
-                                "description": "Menampilkan List Harga premium",
-                                "rowId": ".premium"
-                                }, {
-                                "title": "[🔬] Script",
-                                "description": "Script Bot",
-                                "rowId": ".sc"
-                                }, {
-                                "title": "[🎖️] Thanks To",
-                                "description": "Terima kasih banyak untuk user yang telah berpartisipasi dalam bot",
-                                "rowId": ".? thnks"
-                                }],
-                                "title": "✧────────────────[ Info ]────────────────✧"
+                                "title": "✧────────────────[ معلومات ]────────────────✧"
                             }
                         ], "contextInfo": 
                          { "stanzaId": m.key.id,
